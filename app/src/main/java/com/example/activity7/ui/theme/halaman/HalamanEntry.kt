@@ -7,6 +7,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.activity7.R
+import com.example.activity7.model.DetailSiswa
 import com.example.activity7.model.EntryViewModel
 import com.example.activity7.model.PenyediaViewModel
 import com.example.activity7.navigasi.DestinasiNavigasi
@@ -27,3 +28,11 @@ fun EntrySiswaScreen(
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormInputSiswa(
+    detailSiswa: DetailSiswa,
+    modifier: Modifier = Modifier,
+    onValueChange: (DetailSiswa) -> Unit = {}
+){}

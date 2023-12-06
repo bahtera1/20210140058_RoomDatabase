@@ -21,6 +21,7 @@ import com.example.activity7.R
 import com.example.activity7.model.DetailSiswa
 import com.example.activity7.model.EntryViewModel
 import com.example.activity7.model.PenyediaViewModel
+import com.example.activity7.model.UIStateSiswa
 import com.example.activity7.navigasi.DestinasiNavigasi
 
 
@@ -39,6 +40,14 @@ fun EntrySiswaScreen(
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 }
+
+@Composable
+fun EntrySiswaBody(
+    uiStateSiswa: UIStateSiswa,
+    onSiswaValueChange: (DetailSiswa) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier,
+){}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

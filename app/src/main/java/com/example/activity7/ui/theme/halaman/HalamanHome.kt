@@ -29,6 +29,11 @@ object DestinasiHome : DestinasiNavigasi {
     override val titleRes = R.string.app_name
 }
 
+@Composable
+fun BodyHome(
+    itemSiswa: List<Siswa>,
+    modifier: Modifier = Modifier
+){}
 
 @Composable
 fun ListSiswa(

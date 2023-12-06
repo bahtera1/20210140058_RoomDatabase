@@ -1,4 +1,4 @@
-package com.example.activity7.ui.theme
+package com.example.activity7
 
 import android.app.Application
 import com.example.activity7.repositori.ContainerApp

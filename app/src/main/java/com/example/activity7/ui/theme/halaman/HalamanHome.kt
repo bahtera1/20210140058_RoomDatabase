@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.unit.dp
 import com.example.activity7.R
 import com.example.activity7.data.Siswa
 import com.example.activity7.navigasi.DestinasiNavigasi

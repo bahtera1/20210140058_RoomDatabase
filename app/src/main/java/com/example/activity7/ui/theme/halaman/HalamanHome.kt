@@ -39,7 +39,7 @@ import com.example.activity7.model.PenyediaViewModel.Factory
 import com.example.activity7.navigasi.DestinasiNavigasi
 
 
-object DestinasiHome : DestinasiNavigasi {
+object DestinasiHome : DestinasiNavigasi{
     override val route = "home"
     override val titleRes = R.string.app_name
 }
@@ -55,6 +55,12 @@ fun HomeScreen(
 
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            SiswaTopAppBar(
+                title = stringResource(DestinasiHome.titleRes),
+                canNavigateBack = false,
+                scrollBehavior = scrollBehavior)
+        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = navigateToItemEntry,
@@ -118,6 +124,7 @@ fun ListSiswa(
         }
     }
 }
+
 @Composable
 fun DataSiswa(
     siswa: Siswa,
@@ -152,8 +159,6 @@ fun DataSiswa(
                 text = siswa.alamat,
                 style = MaterialTheme.typography.titleMedium,
             )
-
         }
-
     }
 }

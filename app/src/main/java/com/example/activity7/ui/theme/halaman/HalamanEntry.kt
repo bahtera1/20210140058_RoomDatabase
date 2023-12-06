@@ -29,6 +29,7 @@ import com.example.activity7.model.EntryViewModel
 import com.example.activity7.model.PenyediaViewModel
 import com.example.activity7.model.UIStateSiswa
 import com.example.activity7.navigasi.DestinasiNavigasi
+import kotlinx.coroutines.launch
 
 
 object DestinasiEntry: DestinasiNavigasi {
@@ -39,12 +40,13 @@ object DestinasiEntry: DestinasiNavigasi {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EntrySiswaScreen(
-    navigetback: () -> Unit,
+    navigetBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
@@ -70,7 +72,6 @@ fun EntrySiswaScreen(
         )
     }
 }
-
 
 @Composable
 fun EntrySiswaBody(
@@ -104,13 +105,13 @@ fun EntrySiswaBody(
 fun FormInputSiswa(
     detailSiswa: DetailSiswa,
     modifier: Modifier = Modifier,
-    onValueChange: (DetailSiswa) -> Unit = {}
+    onValueChange: (DetailSiswa) -> Unit = {},
+    enabled: Boolean = true
 ){
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
     ) {
-
         OutlinedTextField(
             value = detailSiswa.nama,
             onValueChange = {onValueChange(detailSiswa.copy(nama = it))},
@@ -148,4 +149,3 @@ fun FormInputSiswa(
         )
     }
 }
-

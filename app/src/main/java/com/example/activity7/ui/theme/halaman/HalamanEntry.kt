@@ -32,7 +32,6 @@ import com.example.activity7.navigasi.DestinasiNavigasi
 import com.example.activity7.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
 
-
 object DestinasiEntry: DestinasiNavigasi {
     override val route = "item_entry"
     override val titleRes = R.string.entry_siswa
@@ -58,8 +57,8 @@ fun EntrySiswaScreen(
             )
         }){innerPadding ->
         EntrySiswaBody(
-            uiStateSiswa = viewModel.UiStateSiswa,
-            onSiswaValueChange = viewModel::updateUiState,
+            uiStateSiswa = viewModel.uiStateSiswa,
+            onSiswaValueChange = viewModel::updateUIState,
             onSaveClick = {
                 coroutineScope.launch {
                     viewModel.saveSiswa()
